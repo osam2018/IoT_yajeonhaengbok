@@ -40,7 +40,6 @@ void loop ()
             time_now = millis();
             if(time_now - time_check > 10000){
                 digitalWrite(7, HIGH);
-                Serial.println("Danger!!!");
             }
         }
         else{
