@@ -10,11 +10,12 @@ int greenpin = 10;
 
 void setup ()
 {
-  Serial.begin (9600);
-  pinMode(7, OUTPUT);
-  pinMode(redpin, OUTPUT);
-  pinMode(greenpin, OUTPUT);  
+    Serial.begin (9600);
+    pinMode(7, OUTPUT);
+    pinMode(redpin, OUTPUT);
+    pinMode(greenpin, OUTPUT);  
 }
+
 void loop ()
 {
     int raw_value = analogRead(A0)-900;

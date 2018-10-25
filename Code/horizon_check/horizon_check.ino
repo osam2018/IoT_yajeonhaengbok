@@ -11,15 +11,15 @@ int max_value = 2400;
 int now_degree = 90;
 
 void setup() {
-  pinMode(left_LED, OUTPUT);
-  pinMode(right_LED, OUTPUT);
-  pinMode(left_pin, INPUT);
-  pinMode(right_pin, INPUT);
+    pinMode(left_LED, OUTPUT);
+    pinMode(right_LED, OUTPUT);
+    pinMode(left_pin, INPUT);
+    pinMode(right_pin, INPUT);
   
-  servo.attach(servo_pin, min_value, max_value);
-  servo.write(90);
+    servo.attach(servo_pin, min_value, max_value);
+    servo.write(90);
 
-  Serial.begin(9600);
+    Serial.begin(9600);
 }
 
 void loop() {
@@ -33,6 +33,7 @@ void loop() {
        digitalWrite(right_LED, LOW);
        Serial.println("left");
     }
+    
     if(left_sensor == HIGH && right_sensor == LOW){
       now_degree = now_degree - 8;
       servo.write(now_degree);
@@ -40,12 +41,14 @@ void loop() {
       digitalWrite(right_LED, HIGH);
       Serial.println("right");
     }
+    
     if(left_sensor == HIGH && right_sensor == HIGH){
       servo.write(now_degree);
       digitalWrite(left_LED, HIGH);
       digitalWrite(right_LED, HIGH);
       Serial.println("alright");
     }
+    
     if(left_sensor == LOW && right_sensor == LOW){
       servo.write(now_degree + 15);
       servo.write(now_degree - 15);
@@ -54,5 +57,6 @@ void loop() {
       digitalWrite(right_LED, HIGH);
       Serial.println("strange");
     }
-  delay(300);
+    
+    delay(300);
 }
